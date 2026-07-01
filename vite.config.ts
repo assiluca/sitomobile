@@ -1,9 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [tailwindcss(), sveltekit()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -17,3 +18,4 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react-dom/client', 'motion/react'],
   },
 });
+
