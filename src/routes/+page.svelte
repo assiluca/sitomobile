@@ -22,4 +22,10 @@
   <title>Sito Mobile — Olimpiadi Invernali</title>
 </svelte:head>
 
-<div bind:this={container} style="width:100%;min-height:100vh;"></div>
+<!-- Mobile wrapper to keep absolute positioning perfect -->
+<div class="min-h-screen w-full flex items-center justify-center py-8">
+  <div class="relative w-[430px] h-[932px] max-w-[100vw] sm:rounded-[3rem] overflow-hidden shadow-2xl bg-black border-[8px] border-black flex-shrink-0" style="scale: min(1, calc(100vw / 430))">
+    <div bind:this={container} class="w-full h-full overflow-y-auto overflow-x-hidden bg-white scroll-smooth" style="position: relative;"></div>
+  </div>
+</div>
+

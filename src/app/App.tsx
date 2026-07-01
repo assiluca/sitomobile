@@ -12,10 +12,10 @@ const YELLOW = "#dc953e";
 const LIGHT  = "#f3f3f3";
 const DARK   = "#151515";
 
-// Commercial fonts with close Google Fonts fallbacks
-const FH  = "'Dharma Gothic E', 'Bebas Neue', sans-serif"; // Heavy
-const FEB = "'Dharma Gothic E', 'Barlow Condensed', sans-serif"; // ExBold
-const FR  = "'Gelica', 'DM Sans', system-ui, sans-serif"; // Regular / Light
+// Commercial fonts loaded via Typekit + Google Fonts fallbacks
+const FH  = "'dharma-gothic-e', 'Dharma Gothic E', 'Bebas Neue', sans-serif"; // Heavy
+const FEB = "'dharma-gothic-e', 'Dharma Gothic E', 'Barlow Condensed', sans-serif"; // ExBold
+const FR  = "'gelica', 'Gelica', 'DM Sans', system-ui, sans-serif"; // Regular / Light
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
