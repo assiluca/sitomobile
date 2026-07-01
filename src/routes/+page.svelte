@@ -5,11 +5,12 @@
   let root: any;
 
   onMount(async () => {
-    const { createRoot } = await import('react-dom/client');
-    const React = await import('react');
-    const { default: App } = await import('../app/App.tsx');
-    root = createRoot(container);
-    root.render(React.default.createElement(App));
+    try {
+      const { mountReactApp } = await import('$lib/ReactApp.tsx');
+      root = mountReactApp(container);
+    } catch (e) {
+      console.error('Errore nel montaggio React:', e);
+    }
   });
 
   onDestroy(() => {
@@ -21,5 +22,4 @@
   <title>Sito Mobile — Olimpiadi Invernali</title>
 </svelte:head>
 
-<div bind:this={container}></div>
-
+<div bind:this={container} style="width:100%;min-height:100vh;"></div>
