@@ -4,7 +4,10 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react(), sveltekit()],
+  plugins: [
+    sveltekit(),
+    react({ include: /\.(tsx|jsx)$/ }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

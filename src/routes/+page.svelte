@@ -1,14 +1,15 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
-  import { createRoot } from 'react-dom/client';
-  import App from '../app/App.tsx';
 
   let container: HTMLDivElement;
-  let root: ReturnType<typeof createRoot>;
+  let root: any;
 
-  onMount(() => {
+  onMount(async () => {
+    const { createRoot } = await import('react-dom/client');
+    const React = await import('react');
+    const { default: App } = await import('../app/App.tsx');
     root = createRoot(container);
-    root.render(App({}));
+    root.render(React.default.createElement(App));
   });
 
   onDestroy(() => {
@@ -21,3 +22,4 @@
 </svelte:head>
 
 <div bind:this={container}></div>
+
